@@ -166,7 +166,7 @@
                         I did internship in July 2022 in Max Engineering and Automation and learnt about PLC, SCADA, Ladder Language and more.
                     </p>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="tl-icon">
                         <i class="fas fa-book"></i>
@@ -520,19 +520,19 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form action="" class="contact-form">
+                        <form class="contact-form" name="google-sheet" method="POST">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <input type="text" required placeholder="YOUR NAME" name="Name" id="Name">
+                                <input type="email" required placeholder="YOUR EMAIL" name="Email">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
+                                <input type="text" required placeholder="ENTER SUBJECT" name="Subject">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                                <textarea id="" cols="15" rows="8" placeholder="Message Here..." name="Message"></textarea>
                             </div>
                             <div class="submit-btn">
-                                <a href="#" class="main-btn">
+                                <a class="main-btn" type="submit" name="submit" onclick="javascript:setData()">
                                     <span class="btn-text">Send Email</span>
                                     <span class="btn-icon"><i class="fas fa-envelope-open"></i></span>
                                 </a>
@@ -565,5 +565,13 @@
         <i class="fas fa-adjust"></i>
     </div>
     <script src="app.js"></script>
+    <script type="text/javascript">
+        function setData(){
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw5W53E6FIgCrNJIQOvByteddtM4iXXBEVhXH9BCg9TFOl9cc6lXboXb36SO-8cxHFU/exec'
+            const form = document.forms['google-sheet']
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)}).then(response => alert("Thanks for Contacting me..! I Will Reply to you soon...")).catch(error => console.error('Error!', error.message))
+        }
+    </script>
 </body>
 </html>
