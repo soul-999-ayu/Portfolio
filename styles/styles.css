@@ -7,7 +7,7 @@
 
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #27AE60;
+  --color-secondary: #ff4c4c;
   --color-white: #FFFFFF;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -962,3 +962,47 @@ section {
 }
 
 /*# sourceMappingURL=styles.css.map */
+.popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 20px 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+      border-radius: 10px;
+    }
+
+    .popup input[type="color"] {
+      width: 100%;
+      height: 50px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+
+    /* Button styling */
+    #openPopup {
+      margin: 100px auto;
+      display: block;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    #closePopup {
+      margin-top: 15px;
+      padding: 6px 12px;
+      background: #eee;
+      border: none;
+      cursor: pointer;
+    }
